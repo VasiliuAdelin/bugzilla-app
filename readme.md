@@ -16,3 +16,9 @@ The database connection is placed inside `/config/db.ts` file. For the successfu
 * DB_PASSWORD
 * DB_HOST
 * DB_PORT
+
+## Miscelenious for now
+
+Backend exposes for now 2 endpoints that can be accesed from frontend for testing: 
+* `/login`
+* `/bugs`

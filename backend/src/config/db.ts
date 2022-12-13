@@ -1,4 +1,5 @@
 import * as mongoose from 'mongoose';
+import 'dotenv/config';
 
 const dbConnectionString = `mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}`;
 
@@ -7,7 +8,7 @@ const connectToDB = async () => {
     await mongoose.connect(dbConnectionString);
     console.log('MongoDB connected');
   } catch (err) {
-    console.log(`Can t connect to db: ${err}`);
+    console.log(`Can't connect to db: ${err}`);
     process.exit(1);
   }
 };
