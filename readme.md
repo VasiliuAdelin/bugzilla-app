@@ -20,5 +20,16 @@ The database connection is placed inside `/config/db.ts` file. For the successfu
 ## Miscelenious for now
 
 Backend exposes for now 2 endpoints that can be accesed from frontend for testing: 
-* `/login`
-* `/bugs`
+* `/bugs`-> POST
+* `/bugs` -> GET 
+
+Structure of JSON Object to be posted on bugs is:
+{
+  name: String,
+  description: String,
+  severity: String,
+  priority: Number,
+  caussingCommit: String,
+  resolvingCommit: String,
+  userID: String 
+}

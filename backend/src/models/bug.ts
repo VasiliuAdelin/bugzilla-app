@@ -10,5 +10,5 @@ const bugSchema = new mongoose.Schema({
   userID: String //TODO how to relate tables
 });
 
-const Fact = mongoose.model('User', bugSchema);
-export default Fact;
+const Bug = mongoose.model('Bug', bugSchema);
+export default Bug;

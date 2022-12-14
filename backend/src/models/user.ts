@@ -7,5 +7,5 @@ const userSchema = new mongoose.Schema({
   role: String
 });
 
-const Fact = mongoose.model('User', userSchema);
-export default Fact;
+const User = mongoose.model('User', userSchema);
+export default User;

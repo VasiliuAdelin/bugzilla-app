@@ -1,23 +1,15 @@
 import express from 'express';
 import connectToDB from './config/db';
+import {getBugs,postBug} from './services/bugService'
+import * as bodyParser from 'body-parser';
+import router from './routes/bugsRoutes';
+
 
 connectToDB();
-
 const app = express();
-const port = 3000;
 
-app.get('/login', (req, res) => {
-  res.send('One day you will actually have to log in!');
-});
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/',router);
 
-app.get('/bugs', (req, res) => {
-  res.json({
-    name: 'First Bug',
-    description: 'Very nasty bug',
-    id: 3
-  });
-});
-
-app.listen(port, () => {
-  return console.log(`Express is listening at http://localhost:${port}`);
-});
+export default app;
