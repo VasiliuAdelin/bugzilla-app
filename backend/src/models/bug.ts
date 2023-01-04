@@ -7,7 +7,6 @@ const bugSchema = new mongoose.Schema({
   priority: Number,
   caussingCommit: String,
   resolvingCommit: String,
-  userID: String //TODO how to relate tables
 });
 
 const Bug = mongoose.model('Bug', bugSchema);

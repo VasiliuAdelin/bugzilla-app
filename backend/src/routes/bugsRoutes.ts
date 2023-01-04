@@ -1,15 +1,12 @@
-
 import * as express from 'express';
-import {getBugs, postBug} from '../services/bugService';
+import { getBugs, postBug, getBug } from '../services/bugService';
 
 const router = express.Router();
 
-router.get('/bugs', getBugs);
+router.post('/projects/:projectId/bugs', postBug);
 
-router.post('/bugs', postBug);
+router.get('/projects/:projectId/bugs', getBugs);
 
-// router.put('/:id', updateCatFact);
-
-// router.delete('/:id', deleteCatFact);
+router.get('/projects/:projectId/bugs/:bugId', getBug);
 
 export default router;
