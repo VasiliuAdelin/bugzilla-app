@@ -1,11 +1,14 @@
 import express from 'express';
+import connectToDB from './config/db';
+import * as bodyParser from 'body-parser';
+import bugsRouter from './routes/bugsRoutes';
+import projectsRouter from './routes/projectsRoutes';
+
+connectToDB();
 const app = express();
-const port = 3000;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/', bugsRouter, projectsRouter);
 
-app.listen(port, () => {
-  return console.log(`Express is listening at http://localhost:${port}`);
-});
+export default app;
